@@ -57,14 +57,14 @@ The snapshot build the original dev version can simply be deployed using maven c
 [INFO] 
 [INFO] 
 [INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ release-demo ---
-[INFO] Building jar: /Users/ss670121/sourcebox/github.com/release-demo/target/release-demo-1.0-SNAPSHOT.jar
+[INFO] Building jar: /Users/samarthya/sourcebox/github.com/release-demo/target/release-demo-1.0-SNAPSHOT.jar
 [INFO] 
 [INFO] --- spring-boot-maven-plugin:2.5.3:repackage (default) @ release-demo ---
 [INFO] Replacing main artifact with repackaged archive
 [INFO] 
 [INFO] --- maven-install-plugin:2.4:install (default-install) @ release-demo ---
-[INFO] Installing /Users/ss670121/sourcebox/github.com/release-demo/target/release-demo-1.0-SNAPSHOT.jar to /Users/ss670121/.m2/repository/me/samarthya/release-demo/1.0-SNAPSHOT/release-demo-1.0-SNAPSHOT.jar
-[INFO] Installing /Users/ss670121/sourcebox/github.com/release-demo/pom.xml to /Users/ss670121/.m2/repository/me/samarthya/release-demo/1.0-SNAPSHOT/release-demo-1.0-SNAPSHOT.pom
+[INFO] Installing /Users/samarthya/sourcebox/github.com/release-demo/target/release-demo-1.0-SNAPSHOT.jar to /Users/samarthya/.m2/repository/me/samarthya/release-demo/1.0-SNAPSHOT/release-demo-1.0-SNAPSHOT.jar
+[INFO] Installing /Users/samarthya/sourcebox/github.com/release-demo/pom.xml to /Users/samarthya/.m2/repository/me/samarthya/release-demo/1.0-SNAPSHOT/release-demo-1.0-SNAPSHOT.pom
 [INFO] 
 [INFO] --- maven-deploy-plugin:2.7:deploy (default-deploy) @ release-demo ---
 Downloading from virtual-repo: http://reposerver.samarthya.me:8082/artifactory/virtual-maven-repo/me/samarthya/release-demo/1.0-SNAPSHOT/maven-metadata.xml
@@ -107,18 +107,18 @@ release-demo@samarthya>mvn release:perform
 [INFO] [perform] 1/3 verify-completed-prepare-phases
 [INFO] [perform] 2/3 checkout-project-from-scm
 [INFO] Checking out the project to perform the release ...
-[INFO] Executing: /bin/sh -c cd /Users/ss670121/sourcebox/github.com/release-demo/target && git clone --depth 1 --branch v1.0.0 https://samarthya:********@github.com/samarthya/release-demo.git checkout
-[INFO] Working directory: /Users/ss670121/sourcebox/github.com/release-demo/target
+[INFO] Executing: /bin/sh -c cd /Users/samarthya/sourcebox/github.com/release-demo/target && git clone --depth 1 --branch v1.0.0 https://samarthya:********@github.com/samarthya/release-demo.git checkout
+[INFO] Working directory: /Users/samarthya/sourcebox/github.com/release-demo/target
 [INFO] Executing: /bin/sh -c cd /var/folders/ry/xrnmhhjx5_sdyq4mv8dk54s00000gn/T/ && git ls-remote https://samarthya:********@github.com/samarthya/release-demo.git
 [INFO] Working directory: /var/folders/ry/xrnmhhjx5_sdyq4mv8dk54s00000gn/T
-[INFO] Executing: /bin/sh -c cd /Users/ss670121/sourcebox/github.com/release-demo/target/checkout && git fetch https://samarthya:********@github.com/samarthya/release-demo.git
-[INFO] Working directory: /Users/ss670121/sourcebox/github.com/release-demo/target/checkout
-[INFO] Executing: /bin/sh -c cd /Users/ss670121/sourcebox/github.com/release-demo/target/checkout && git checkout v1.0.0
-[INFO] Working directory: /Users/ss670121/sourcebox/github.com/release-demo/target/checkout
-[INFO] Executing: /bin/sh -c cd /Users/ss670121/sourcebox/github.com/release-demo/target/checkout && git ls-files
-[INFO] Working directory: /Users/ss670121/sourcebox/github.com/release-demo/target/checkout
+[INFO] Executing: /bin/sh -c cd /Users/samarthya/sourcebox/github.com/release-demo/target/checkout && git fetch https://samarthya:********@github.com/samarthya/release-demo.git
+[INFO] Working directory: /Users/samarthya/sourcebox/github.com/release-demo/target/checkout
+[INFO] Executing: /bin/sh -c cd /Users/samarthya/sourcebox/github.com/release-demo/target/checkout && git checkout v1.0.0
+[INFO] Working directory: /Users/samarthya/sourcebox/github.com/release-demo/target/checkout
+[INFO] Executing: /bin/sh -c cd /Users/samarthya/sourcebox/github.com/release-demo/target/checkout && git ls-files
+[INFO] Working directory: /Users/samarthya/sourcebox/github.com/release-demo/target/checkout
 [INFO] [perform] 3/3 run-perform-goals
-[INFO] Invoking perform goals in directory /Users/ss670121/sourcebox/github.com/release-demo/target/checkout
+[INFO] Invoking perform goals in directory /Users/samarthya/sourcebox/github.com/release-demo/target/checkout
 [INFO] Executing goals 'deploy'...
 [INFO] pomFileName is already set, ignoring the -f argument
 [WARNING] Maven will be executed in interactive mode, but no input stream has been configured for this MavenInvoker instance.
@@ -135,16 +135,16 @@ release-demo@samarthya>mvn release:perform
 [INFO] [INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ release-demo ---
 [INFO] [INFO] Changes detected - recompiling the module!
 [INFO] [WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
-[INFO] [INFO] Compiling 2 source files to /Users/ss670121/sourcebox/github.com/release-demo/target/checkout/target/classes
+[INFO] [INFO] Compiling 2 source files to /Users/samarthya/sourcebox/github.com/release-demo/target/checkout/target/classes
 [INFO] [INFO] 
 [INFO] [INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ release-demo ---
 [INFO] [WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
-[INFO] [INFO] skip non existing resourceDirectory /Users/ss670121/sourcebox/github.com/release-demo/target/checkout/src/test/resources
+[INFO] [INFO] skip non existing resourceDirectory /Users/samarthya/sourcebox/github.com/release-demo/target/checkout/src/test/resources
 [INFO] [INFO] 
 [INFO] [INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ release-demo ---
 [INFO] [INFO] Changes detected - recompiling the module!
 [INFO] [WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
-[INFO] [INFO] Compiling 1 source file to /Users/ss670121/sourcebox/github.com/release-demo/target/checkout/target/test-classes
+[INFO] [INFO] Compiling 1 source file to /Users/samarthya/sourcebox/github.com/release-demo/target/checkout/target/test-classes
 [INFO] [INFO] 
 [INFO] [INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ release-demo ---
 [INFO] [INFO] 
@@ -161,7 +161,7 @@ release-demo@samarthya>mvn release:perform
 [INFO] 17:00:57.763 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [me.samarthya.GreetingControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
 [INFO] 17:00:57.763 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [me.samarthya.GreetingControllerTest]: GreetingControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
 [INFO] 17:00:57.806 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [me.samarthya.GreetingControllerTest]
-[INFO] 17:00:57.862 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/ss670121/sourcebox/github.com/release-demo/target/checkout/target/classes/me/samarthya/StartPoint.class]
+[INFO] 17:00:57.862 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/samarthya/sourcebox/github.com/release-demo/target/checkout/target/classes/me/samarthya/StartPoint.class]
 [INFO] 17:00:57.863 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration me.samarthya.StartPoint for test class me.samarthya.GreetingControllerTest
 [INFO] 17:00:57.936 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [me.samarthya.GreetingControllerTest]: using defaults.
 [INFO] 17:00:57.936 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
@@ -180,7 +180,7 @@ release-demo@samarthya>mvn release:perform
 [INFO]  =========|_|==============|___/=/_/_/_/
 [INFO]  :: Spring Boot ::                (v2.5.3)
 [INFO] 
-[INFO] 2021-09-23 17:00:58.233  INFO 96184 --- [           main] me.samarthya.GreetingControllerTest      : Starting GreetingControllerTest using Java 17 on C02Z45LYLVDR with PID 96184 (started by ss670121 in /Users/ss670121/sourcebox/github.com/release-demo/target/checkout)
+[INFO] 2021-09-23 17:00:58.233  INFO 96184 --- [           main] me.samarthya.GreetingControllerTest      : Starting GreetingControllerTest using Java 17 on C02Z45LYLVDR with PID 96184 (started by samarthya in /Users/samarthya/sourcebox/github.com/release-demo/target/checkout)
 [INFO] 2021-09-23 17:00:58.234  INFO 96184 --- [           main] me.samarthya.GreetingControllerTest      : No active profile set, falling back to default profiles: default
 [INFO] 2021-09-23 17:00:59.151  INFO 96184 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
 [INFO] 2021-09-23 17:00:59.160  INFO 96184 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
@@ -421,14 +421,14 @@ release-demo@samarthya>mvn release:perform
 [INFO] [INFO] 
 [INFO] [INFO] 
 [INFO] [INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ release-demo ---
-[INFO] [INFO] Building jar: /Users/ss670121/sourcebox/github.com/release-demo/target/checkout/target/release-demo-1.0.0.jar
+[INFO] [INFO] Building jar: /Users/samarthya/sourcebox/github.com/release-demo/target/checkout/target/release-demo-1.0.0.jar
 [INFO] [INFO] 
 [INFO] [INFO] --- spring-boot-maven-plugin:2.5.3:repackage (default) @ release-demo ---
 [INFO] [INFO] Replacing main artifact with repackaged archive
 [INFO] [INFO] 
 [INFO] [INFO] --- maven-install-plugin:2.4:install (default-install) @ release-demo ---
-[INFO] [INFO] Installing /Users/ss670121/sourcebox/github.com/release-demo/target/checkout/target/release-demo-1.0.0.jar to /Users/ss670121/.m2/repository/me/samarthya/release-demo/1.0.0/release-demo-1.0.0.jar
-[INFO] [INFO] Installing /Users/ss670121/sourcebox/github.com/release-demo/target/checkout/pom.xml to /Users/ss670121/.m2/repository/me/samarthya/release-demo/1.0.0/release-demo-1.0.0.pom
+[INFO] [INFO] Installing /Users/samarthya/sourcebox/github.com/release-demo/target/checkout/target/release-demo-1.0.0.jar to /Users/samarthya/.m2/repository/me/samarthya/release-demo/1.0.0/release-demo-1.0.0.jar
+[INFO] [INFO] Installing /Users/samarthya/sourcebox/github.com/release-demo/target/checkout/pom.xml to /Users/samarthya/.m2/repository/me/samarthya/release-demo/1.0.0/release-demo-1.0.0.pom
 [INFO] [INFO] 
 [INFO] [INFO] --- maven-deploy-plugin:2.7:deploy (default-deploy) @ release-demo ---
 [INFO] Uploading to virtual-repo-release: http://reposerver.samarthya.me:8082/artifactory/maven-local-release/me/samarthya/release-demo/1.0.0/release-demo-1.0.0.jar
