@@ -20,9 +20,9 @@
 
     <scm>
         <developerConnection>
-            scm:git:git@github.com:samarthya/release-demo.git
+            scm:git:https://github.com/samarthya/release-demo.git
         </developerConnection>
-        <connection>scm:git:git@github.com:samarthya/release-demo.git</connection>
+        <connection>scm:git:https://github.com/samarthya/release-demo.git</connection>
         <url>https://github.com/samarthya/release-demo</url>
         <tag>v@{project.version}</tag>
     </scm>
