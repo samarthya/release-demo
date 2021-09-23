@@ -22,11 +22,13 @@
         <developerConnection>
             scm:git:git@github.com:samarthya/release-demo.git
         </developerConnection>
+        <connection>scm:git:git@github.com:samarthya/release-demo.git</connection>
         <tag>v1.0</tag>
     </scm>
 
 
     <properties>
+        <project.scm.id>github.com</project.scm.id>
         <final.name>release-demo</final.name>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
