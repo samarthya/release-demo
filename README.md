@@ -28,7 +28,8 @@ Configure the `spring-boot` application to run.
 < 
 * Connection #0 to host localhost left intact
 hello Spring!* Closing connection 0
-- ```
+- 
+```
 
 Same can be verified in the browser
 
