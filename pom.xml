@@ -70,8 +70,6 @@
                     <artifactId>maven-release-plugin</artifactId>
                     <version>${maven.release.version}</version>
                     <configuration>
-                        <localCheckout>true</localCheckout>
-                        <pushChanges>true</pushChanges>
                         <scmCommentPrefix>[scm bot]</scmCommentPrefix>
                         <tagNameFormat>@{project.version}</tagNameFormat>
                     </configuration>
