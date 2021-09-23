@@ -91,6 +91,64 @@ Uploaded to virtual-repo: http://reposerver.samarthya.me:8082/artifactory/virtua
 
 The first step essentially is to prepare for release `mvn release:prepare`. If you want to do a dry run you can pass the argument `-DdryRun=true` it will just verify the sanctity of the build.
 
+```bash
+release-demo@samarthya>mvn release:prepare  
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< me.samarthya:release-demo >----------------------
+[INFO] Building release-demo 1.0.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-release-plugin:3.0.0-M4:prepare (default-cli) @ release-demo ---
+[INFO] phase verify-release-configuration
+[INFO] starting prepare goal, composed of 17 phases: check-poms, scm-check-modifications, check-dependency-snapshots, create-backup-poms, map-release-versions, input-variables, map-development-versions, rewrite-poms-for-release, generate-release-poms, run-preparation-goals, scm-commit-release, scm-tag, rewrite-poms-for-development, remove-release-poms, run-completion-goals, scm-commit-development, end-release
+[INFO] Resuming release from phase 'scm-commit-release'
+[INFO] [prepare] 11/17 scm-commit-release
+[INFO] Checking in modified POMs...
+[INFO] Executing: /bin/sh -c cd /Users/samarthya/sourcebox/github.com/release-demo && git add -- pom.xml
+[INFO] Working directory: /Users/samarthya/sourcebox/github.com/release-demo
+[INFO] Executing: /bin/sh -c cd /Users/samarthya/sourcebox/github.com/release-demo && git rev-parse --show-prefix
+[INFO] Working directory: /Users/samarthya/sourcebox/github.com/release-demo
+[INFO] Executing: /bin/sh -c cd /Users/samarthya/sourcebox/github.com/release-demo && git status --porcelain .
+[INFO] Working directory: /Users/samarthya/sourcebox/github.com/release-demo
+[WARNING] Ignoring unrecognized line: ?? pom.xml.releaseBackup
+[INFO] [prepare] 12/17 scm-tag
+[INFO] Tagging release with the label v1.0.0...
+[INFO] Executing: /bin/sh -c cd /Users/samarthya/sourcebox/github.com/release-demo && git tag -F /var/folders/ry/xrnmhhjx5_sdyq4mv8dk54s00000gn/T/maven-scm-1110674746.commit v1.0.0
+[INFO] Working directory: /Users/samarthya/sourcebox/github.com/release-demo
+[INFO] Executing: /bin/sh -c cd /Users/samarthya/sourcebox/github.com/release-demo && git push https://samarthya:********@github.com/samarthya/release-demo.git refs/tags/v1.0.0
+[INFO] Working directory: /Users/samarthya/sourcebox/github.com/release-demo
+[INFO] Executing: /bin/sh -c cd /Users/samarthya/sourcebox/github.com/release-demo && git ls-files
+[INFO] Working directory: /Users/samarthya/sourcebox/github.com/release-demo
+[INFO] [prepare] 13/17 rewrite-poms-for-development
+[INFO] Transforming 'release-demo'...
+[INFO] [prepare] 14/17 remove-release-poms
+[INFO] Not removing release POMs
+[INFO] [prepare] 15/17 run-completion-goals
+[INFO] [prepare] 16/17 scm-commit-development
+[INFO] Checking in modified POMs...
+[INFO] Executing: /bin/sh -c cd /Users/samarthya/sourcebox/github.com/release-demo && git add -- pom.xml
+[INFO] Working directory: /Users/samarthya/sourcebox/github.com/release-demo
+[INFO] Executing: /bin/sh -c cd /Users/samarthya/sourcebox/github.com/release-demo && git rev-parse --show-prefix
+[INFO] Working directory: /Users/samarthya/sourcebox/github.com/release-demo
+[INFO] Executing: /bin/sh -c cd /Users/samarthya/sourcebox/github.com/release-demo && git status --porcelain .
+[INFO] Working directory: /Users/samarthya/sourcebox/github.com/release-demo
+[WARNING] Ignoring unrecognized line: ?? pom.xml.releaseBackup
+[INFO] Executing: /bin/sh -c cd /Users/samarthya/sourcebox/github.com/release-demo && git commit --verbose -F /var/folders/ry/xrnmhhjx5_sdyq4mv8dk54s00000gn/T/maven-scm-1164629822.commit
+[INFO] Working directory: /Users/samarthya/sourcebox/github.com/release-demo
+[INFO] Executing: /bin/sh -c cd /Users/samarthya/sourcebox/github.com/release-demo && git symbolic-ref HEAD
+[INFO] Working directory: /Users/samarthya/sourcebox/github.com/release-demo
+[INFO] Executing: /bin/sh -c cd /Users/samarthya/sourcebox/github.com/release-demo && git push https://samarthya:********@github.com/samarthya/release-demo.git refs/heads/main:refs/heads/main
+[INFO] Working directory: /Users/samarthya/sourcebox/github.com/release-demo
+[INFO] [prepare] 17/17 end-release
+[INFO] Release preparation complete.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.106 s
+[INFO] Finished at: 2021-09-23T17:00:30+05:30
+[INFO] ------------------------------------------------------------------------
+```
 
 The second step is to perform the release using `mvn release:perform`. It essentialy builds on the first step and performs the tagging, artifact upload if configured and 
 
