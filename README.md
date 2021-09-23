@@ -32,7 +32,7 @@ hello Spring!* Closing connection 0
 
 Same can be verified in the browser
 
-![brwoser](images/Browser-Get.png)
+<img src="images/Browser-Get.png"/>
 
 ## Maven release plugin
 
@@ -40,13 +40,13 @@ Whatever I have used is well explained in the [Official Documentation](http://ma
 
 Assuming you code is available in your repository
 
-![gitrepo](./images/github-source.png)
+<img src="images/github-source.png"/>
 
 ### `maven deploy`
 
 The snapshot build the original dev version can simply be deployed using maven clean deploy
 
-![snapshot](./images/maven-snapshot-deploy.png)
+<img src="images/maven-snapshot-deploy.png"/>
 
 ```bash
 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.332 s - in me.samarthya.GreetingControllerTest
