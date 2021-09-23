@@ -4,7 +4,7 @@
 
     <groupId>me.samarthya</groupId>
     <artifactId>release-demo</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
 
     <distributionManagement>
@@ -22,7 +22,7 @@
         <developerConnection>scm:git:${project.scm.url}</developerConnection>
         <connection>scm:git:${project.scm.url}</connection>
         <url>https://github.com/samarthya/release-demo.git</url>
-      <tag>v1.0.0</tag>
+      <tag>v1.0.1</tag>
   </scm>
 
 
