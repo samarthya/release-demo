@@ -24,7 +24,7 @@
         </developerConnection>
         <connection>scm:git:git@github.com:samarthya/release-demo.git</connection>
         <url>https://github.com/samarthya/release-demo</url>
-        <tag>v1.0</tag>
+        <tag>v@{project.version}</tag>
     </scm>
 
 

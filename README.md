@@ -91,3 +91,7 @@ Uploaded to virtual-repo: http://reposerver.samarthya.me:8082/artifactory/virtua
 `mvn release:prepare`
 `mvn release:perform`
 `mvn release:rollback`
+
+### Help regarding a goal
+
+`mvn release:help -Dgoal=prepare`
