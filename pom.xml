@@ -4,7 +4,7 @@
 
     <groupId>me.samarthya</groupId>
     <artifactId>release-demo</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <distributionManagement>
@@ -13,7 +13,7 @@
             <id>virtual-repo</id>
         </snapshotRepository>
         <repository>
-            <url>http://reposerver.samarthya.me:8082/artifactory/virtual-maven-repo</url>
+            <url>http://reposerver.samarthya.me:8082/artifactory/esd-oi-maven-release</url>
             <id>virtual-repo-release</id>
         </repository>
     </distributionManagement>
