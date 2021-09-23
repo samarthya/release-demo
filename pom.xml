@@ -19,12 +19,9 @@
     </distributionManagement>
 
     <scm>
-        <developerConnection>
-            scm:git:https://github.com/samarthya/release-demo.git
-        </developerConnection>
-        <connection>scm:git:https://github.com/samarthya/release-demo.git</connection>
-        <url>https://github.com/samarthya/release-demo</url>
-        <tag>v@{project.version}</tag>
+        <developerConnection>scm:git:${project.scm.url}</developerConnection>
+        <connection>scm:git:${project.scm.url}</connection>
+        <url>https://github.com/samarthya/release-demo.git</url>
     </scm>
 
 
@@ -75,6 +72,8 @@
                     <configuration>
                         <localCheckout>true</localCheckout>
                         <pushChanges>true</pushChanges>
+                        <scmCommentPrefix>[scm bot]</scmCommentPrefix>
+                        <tagNameFormat>@{project.version}</tagNameFormat>
                     </configuration>
                 </plugin>
 
