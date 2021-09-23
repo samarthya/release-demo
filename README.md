@@ -86,4 +86,6 @@ Uploaded to virtual-repo: http://reposerver.samarthya.me:8082/artifactory/virtua
 [INFO] ------------------------------------------------------------------------
 ```
 
-## The release plugin**
+## The release plugin
+
+`mvn release:prepare`

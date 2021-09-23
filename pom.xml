@@ -13,7 +13,7 @@
             <id>virtual-repo</id>
         </snapshotRepository>
         <repository>
-            <url>http://reposerver.samarthya.me:8082/artifactory/esd-oi-maven-release</url>
+            <url>http://reposerver.samarthya.me:8082/artifactory/maven-local-release</url>
             <id>virtual-repo-release</id>
         </repository>
     </distributionManagement>
@@ -74,7 +74,7 @@
                     <version>${maven.release.version}</version>
                     <configuration>
                         <localCheckout>true</localCheckout>
-                        <pushChanges>false</pushChanges>
+                        <pushChanges>true</pushChanges>
                     </configuration>
                 </plugin>
 
