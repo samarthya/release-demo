@@ -1,4 +1,4 @@
-# Using the release plugin
+**# Using the release plugin
 
 In this demo I will be using a simple demo service exposed as artifact for anyone to use and explain the steps of using the `versions` plugin
 
@@ -32,7 +32,7 @@ hello Spring!* Closing connection 0
 
 Same can be verified in the browser
 
-![](images/Browser-Get.png)
+![brwoser](images/Browser-Get.png)
 
 ## Maven release plugin
 
@@ -40,13 +40,13 @@ Whatever I have used is well explained in the [Official Documentation](http://ma
 
 Assuming you code is available in your repository
 
-![](./images/github-source.png)
+![gitrepo](./images/github-source.png)
 
 ### `maven deploy`
 
 The snapshot build the original dev version can simply be deployed using maven clean deploy
 
-![](./images/maven-snapshot-deploy.png)
+![snapshot](./images/maven-snapshot-deploy.png)
 
 ```bash
 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.332 s - in me.samarthya.GreetingControllerTest
@@ -86,4 +86,4 @@ Uploaded to virtual-repo: http://reposerver.samarthya.me:8082/artifactory/virtua
 [INFO] ------------------------------------------------------------------------
 ```
 
-## The release plugin
+## The release plugin**
