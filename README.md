@@ -5,6 +5,437 @@ In this demo I will be using a simple demo service exposed as artifact for anyon
 ## Application
 
 The source creates a simple application with one rest endpoint exposed over 'http://localhost:8181/' and returns a string `"hello Spring!"`
+
+### Building Snapshot version
+
+The current `pom.xml` will allow you to publish the artifacts more details below
+
+```bash
+mvn clean package deploy
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< me.samarthya:release-demo >----------------------
+[INFO] Building release-demo 1.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ release-demo ---
+[INFO] Deleting /Users/samarthya/sourcebox/github.com/release-demo/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0:enforce (enforce-build-tools-versions) @ release-demo ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ release-demo ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ release-demo ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /Users/samarthya/sourcebox/github.com/release-demo/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ release-demo ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /Users/samarthya/sourcebox/github.com/release-demo/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ release-demo ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /Users/samarthya/sourcebox/github.com/release-demo/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ release-demo ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running me.samarthya.GreetingControllerTest
+19:00:44.856 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+19:00:44.871 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+19:00:44.903 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [me.samarthya.GreetingControllerTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+19:00:44.910 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [me.samarthya.GreetingControllerTest], using SpringBootContextLoader
+19:00:44.913 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [me.samarthya.GreetingControllerTest]: class path resource [me/samarthya/GreetingControllerTest-context.xml] does not exist
+19:00:44.914 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [me.samarthya.GreetingControllerTest]: class path resource [me/samarthya/GreetingControllerTestContext.groovy] does not exist
+19:00:44.914 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [me.samarthya.GreetingControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+19:00:44.914 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [me.samarthya.GreetingControllerTest]: GreetingControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+19:00:44.954 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [me.samarthya.GreetingControllerTest]
+19:00:45.014 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/samarthya/sourcebox/github.com/release-demo/target/classes/me/samarthya/StartPoint.class]
+19:00:45.015 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration me.samarthya.StartPoint for test class me.samarthya.GreetingControllerTest
+19:00:45.091 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [me.samarthya.GreetingControllerTest]: using defaults.
+19:00:45.091 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+19:00:45.100 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]
+19:00:45.101 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+19:00:45.101 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@727eb8cb, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@39d9314d, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@b978d10, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@5b7a8434, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@5c45d770, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2ce6c6ec, org.springframework.test.context.event.EventPublishingTestExecutionListener@1bae316d, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@147a5d08, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@6676f6a0, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@7cbd9d24, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@1672fe87, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@5026735c, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@1b45c0e]
+19:00:45.104 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@352c1b98 testClass = GreetingControllerTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@21129f1f testClass = GreetingControllerTest, locations = '{}', classes = '{class me.samarthya.StartPoint}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=0}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@41c2284a, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@1fb700ee, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@52102734, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@55b53d44, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@55536d9e, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@57855c9a], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> false]], class annotated with @DirtiesContext [false] with mode [null].
+19:00:45.115 [main] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@352c1b98 testClass = GreetingControllerTest, testInstance = me.samarthya.GreetingControllerTest@1115ec15, testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@21129f1f testClass = GreetingControllerTest, locations = '{}', classes = '{class me.samarthya.StartPoint}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=0}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@41c2284a, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@1fb700ee, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@52102734, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@55b53d44, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@55536d9e, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@57855c9a], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> false, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]].
+19:00:45.135 [main] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=0}
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.5.4)
+
+2021-09-23 19:00:45.378  INFO 7040 --- [           main] me.samarthya.GreetingControllerTest      : Starting GreetingControllerTest using Java 17 on C02Z45LYLVDR with PID 7040 (started by samarthya in /Users/samarthya/sourcebox/github.com/release-demo)
+2021-09-23 19:00:45.380  INFO 7040 --- [           main] me.samarthya.GreetingControllerTest      : No active profile set, falling back to default profiles: default
+2021-09-23 19:00:46.408  INFO 7040 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2021-09-23 19:00:46.418  INFO 7040 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-09-23 19:00:46.418  INFO 7040 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-09-23 19:00:46.776  INFO 7040 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-09-23 19:00:46.777  INFO 7040 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1378 ms
+2021-09-23 19:00:47.574  INFO 7040 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2021-09-23 19:00:47.660  INFO 7040 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 63611 (http) with context path ''
+2021-09-23 19:00:47.674  INFO 7040 --- [           main] me.samarthya.GreetingControllerTest      : Started GreetingControllerTest in 2.537 seconds (JVM running for 3.424)
+applicationAvailability
+applicationTaskExecutor
+basicErrorController
+beanNameHandlerMapping
+beanNameViewResolver
+characterEncodingFilter
+classLoaderMetrics
+commandLineRunner
+controllerEndpointDiscoverer
+controllerEndpointHandlerMapping
+controllerExposeExcludePropertyEndpointFilter
+conventionErrorViewResolver
+defaultServletHandlerMapping
+defaultViewResolver
+diskSpaceHealthIndicator
+dispatcherServlet
+dispatcherServletRegistration
+endpointCachingOperationInvokerAdvisor
+endpointMediaTypes
+endpointOperationParameterMapper
+envInfoContributor
+error
+errorAttributes
+errorPageCustomizer
+errorPageRegistrarBeanPostProcessor
+fileDescriptorMetrics
+flashMapManager
+forceAutoProxyCreatorToUseClassProxying
+formContentFilter
+greetingController
+handlerExceptionResolver
+handlerFunctionAdapter
+healthContributorRegistry
+healthEndpoint
+healthEndpointGroups
+healthEndpointGroupsBeanPostProcessor
+healthEndpointWebExtension
+healthHttpCodeStatusMapper
+healthStatusAggregator
+httpRequestHandlerAdapter
+jacksonObjectMapper
+jacksonObjectMapperBuilder
+jsonComponentModule
+jvmGcMetrics
+jvmMemoryMetrics
+jvmThreadMetrics
+lifecycleProcessor
+localeCharsetMappingsCustomizer
+localeResolver
+logbackMetrics
+management.endpoint.health-org.springframework.boot.actuate.autoconfigure.health.HealthEndpointProperties
+management.endpoints.web-org.springframework.boot.actuate.autoconfigure.endpoint.web.WebEndpointProperties
+management.endpoints.web.cors-org.springframework.boot.actuate.autoconfigure.endpoint.web.CorsEndpointProperties
+management.health.diskspace-org.springframework.boot.actuate.autoconfigure.system.DiskSpaceHealthIndicatorProperties
+management.info-org.springframework.boot.actuate.autoconfigure.info.InfoContributorProperties
+management.metrics-org.springframework.boot.actuate.autoconfigure.metrics.MetricsProperties
+management.metrics.export.simple-org.springframework.boot.actuate.autoconfigure.metrics.export.simple.SimpleProperties
+management.server-org.springframework.boot.actuate.autoconfigure.web.server.ManagementServerProperties
+managementServletContext
+mappingJackson2HttpMessageConverter
+messageConverters
+meterRegistryPostProcessor
+metricsHttpClientUriTagFilter
+metricsHttpServerUriTagFilter
+metricsRestTemplateCustomizer
+metricsWebMvcConfigurer
+micrometerClock
+multipartConfigElement
+multipartResolver
+mvcContentNegotiationManager
+mvcConversionService
+mvcHandlerMappingIntrospector
+mvcPathMatcher
+mvcPatternParser
+mvcResourceUrlProvider
+mvcUriComponentsContributor
+mvcUrlPathHelper
+mvcValidator
+mvcViewResolver
+org.springframework.aop.config.internalAutoProxyCreator
+org.springframework.boot.actuate.autoconfigure.availability.AvailabilityHealthContributorAutoConfiguration
+org.springframework.boot.actuate.autoconfigure.endpoint.EndpointAutoConfiguration
+org.springframework.boot.actuate.autoconfigure.endpoint.web.ServletEndpointManagementContextConfiguration
+org.springframework.boot.actuate.autoconfigure.endpoint.web.ServletEndpointManagementContextConfiguration$WebMvcServletEndpointManagementContextConfiguration
+org.springframework.boot.actuate.autoconfigure.endpoint.web.WebEndpointAutoConfiguration
+org.springframework.boot.actuate.autoconfigure.endpoint.web.WebEndpointAutoConfiguration$WebEndpointServletConfiguration
+org.springframework.boot.actuate.autoconfigure.endpoint.web.servlet.WebMvcEndpointManagementContextConfiguration
+org.springframework.boot.actuate.autoconfigure.health.HealthContributorAutoConfiguration
+org.springframework.boot.actuate.autoconfigure.health.HealthEndpointAutoConfiguration
+org.springframework.boot.actuate.autoconfigure.health.HealthEndpointConfiguration
+org.springframework.boot.actuate.autoconfigure.health.HealthEndpointWebExtensionConfiguration
+org.springframework.boot.actuate.autoconfigure.info.InfoContributorAutoConfiguration
+org.springframework.boot.actuate.autoconfigure.metrics.CompositeMeterRegistryAutoConfiguration
+org.springframework.boot.actuate.autoconfigure.metrics.JvmMetricsAutoConfiguration
+org.springframework.boot.actuate.autoconfigure.metrics.LogbackMetricsAutoConfiguration
+org.springframework.boot.actuate.autoconfigure.metrics.MetricsAutoConfiguration
+org.springframework.boot.actuate.autoconfigure.metrics.SystemMetricsAutoConfiguration
+org.springframework.boot.actuate.autoconfigure.metrics.export.simple.SimpleMetricsExportAutoConfiguration
+org.springframework.boot.actuate.autoconfigure.metrics.integration.IntegrationMetricsAutoConfiguration
+org.springframework.boot.actuate.autoconfigure.metrics.web.client.HttpClientMetricsAutoConfiguration
+org.springframework.boot.actuate.autoconfigure.metrics.web.client.RestTemplateMetricsConfiguration
+org.springframework.boot.actuate.autoconfigure.metrics.web.servlet.WebMvcMetricsAutoConfiguration
+org.springframework.boot.actuate.autoconfigure.metrics.web.tomcat.TomcatMetricsAutoConfiguration
+org.springframework.boot.actuate.autoconfigure.system.DiskSpaceHealthContributorAutoConfiguration
+org.springframework.boot.actuate.autoconfigure.web.server.ManagementContextAutoConfiguration
+org.springframework.boot.actuate.autoconfigure.web.server.ManagementContextAutoConfiguration$SameManagementContextConfiguration
+org.springframework.boot.actuate.autoconfigure.web.server.ManagementContextAutoConfiguration$SameManagementContextConfiguration$EnableSameManagementContextConfiguration
+org.springframework.boot.actuate.autoconfigure.web.servlet.ServletManagementContextAutoConfiguration
+org.springframework.boot.autoconfigure.AutoConfigurationPackages
+org.springframework.boot.autoconfigure.aop.AopAutoConfiguration
+org.springframework.boot.autoconfigure.aop.AopAutoConfiguration$ClassProxyingConfiguration
+org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration
+org.springframework.boot.autoconfigure.context.ConfigurationPropertiesAutoConfiguration
+org.springframework.boot.autoconfigure.context.LifecycleAutoConfiguration
+org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration
+org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration
+org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration$StringHttpMessageConverterConfiguration
+org.springframework.boot.autoconfigure.http.JacksonHttpMessageConvertersConfiguration
+org.springframework.boot.autoconfigure.http.JacksonHttpMessageConvertersConfiguration$MappingJackson2HttpMessageConverterConfiguration
+org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration
+org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory
+org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration
+org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$Jackson2ObjectMapperBuilderCustomizerConfiguration
+org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderConfiguration
+org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperConfiguration
+org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$ParameterNamesModuleConfiguration
+org.springframework.boot.autoconfigure.sql.init.SqlInitializationAutoConfiguration
+org.springframework.boot.autoconfigure.task.TaskExecutionAutoConfiguration
+org.springframework.boot.autoconfigure.task.TaskSchedulingAutoConfiguration
+org.springframework.boot.autoconfigure.web.client.RestTemplateAutoConfiguration
+org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration
+org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration$TomcatWebServerFactoryCustomizerConfiguration
+org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration
+org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration$DispatcherServletConfiguration
+org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration$DispatcherServletRegistrationConfiguration
+org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration
+org.springframework.boot.autoconfigure.web.servlet.MultipartAutoConfiguration
+org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryAutoConfiguration
+org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryConfiguration$EmbeddedTomcat
+org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration
+org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration
+org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter
+org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration
+org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration
+org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration
+org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoConfiguration
+org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoConfiguration$TomcatWebSocketConfiguration
+org.springframework.boot.context.internalConfigurationPropertiesBinder
+org.springframework.boot.context.internalConfigurationPropertiesBinderFactory
+org.springframework.boot.context.properties.BoundConfigurationProperties
+org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor
+org.springframework.boot.context.properties.EnableConfigurationPropertiesRegistrar.methodValidationExcludeFilter
+org.springframework.boot.sql.init.dependency.DatabaseInitializationDependencyConfigurer$DependsOnDatabaseInitializationPostProcessor
+org.springframework.boot.test.mock.mockito.MockitoPostProcessor
+org.springframework.boot.test.mock.mockito.MockitoPostProcessor$SpyPostProcessor
+org.springframework.boot.test.web.client.TestRestTemplate
+org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer$TestRestTemplateRegistrar
+org.springframework.context.annotation.internalAutowiredAnnotationProcessor
+org.springframework.context.annotation.internalCommonAnnotationProcessor
+org.springframework.context.annotation.internalConfigurationAnnotationProcessor
+org.springframework.context.event.internalEventListenerFactory
+org.springframework.context.event.internalEventListenerProcessor
+parameterNamesModule
+pathMappedEndpoints
+pingHealthContributor
+preserveErrorControllerTargetClassPostProcessor
+processorMetrics
+propertiesMeterFilter
+propertySourcesPlaceholderConfigurer
+requestContextFilter
+requestMappingHandlerAdapter
+requestMappingHandlerMapping
+resourceHandlerMapping
+restTemplateBuilder
+restTemplateBuilderConfigurer
+restTemplateExchangeTagsProvider
+routerFunctionMapping
+scheduledBeanLazyInitializationExcludeFilter
+server-org.springframework.boot.autoconfigure.web.ServerProperties
+servletEndpointDiscoverer
+servletEndpointRegistrar
+servletExposeExcludePropertyEndpointFilter
+servletWebChildContextFactory
+servletWebServerFactoryCustomizer
+simpleConfig
+simpleControllerHandlerAdapter
+simpleMeterRegistry
+spring.info-org.springframework.boot.autoconfigure.info.ProjectInfoProperties
+spring.jackson-org.springframework.boot.autoconfigure.jackson.JacksonProperties
+spring.lifecycle-org.springframework.boot.autoconfigure.context.LifecycleProperties
+spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties
+spring.resources-org.springframework.boot.autoconfigure.web.ResourceProperties
+spring.servlet.multipart-org.springframework.boot.autoconfigure.web.servlet.MultipartProperties
+spring.sql.init-org.springframework.boot.autoconfigure.sql.init.SqlInitializationProperties
+spring.task.execution-org.springframework.boot.autoconfigure.task.TaskExecutionProperties
+spring.task.scheduling-org.springframework.boot.autoconfigure.task.TaskSchedulingProperties
+spring.web-org.springframework.boot.autoconfigure.web.WebProperties
+standardJacksonObjectMapperBuilderCustomizer
+startPoint
+stringHttpMessageConverter
+taskExecutorBuilder
+taskSchedulerBuilder
+themeResolver
+tomcatMetricsBinder
+tomcatServletWebServerFactory
+tomcatServletWebServerFactoryCustomizer
+tomcatWebServerFactoryCustomizer
+uptimeMetrics
+viewControllerHandlerMapping
+viewNameTranslator
+viewResolver
+webEndpointDiscoverer
+webEndpointPathMapper
+webEndpointServletHandlerMapping
+webExposeExcludePropertyEndpointFilter
+webMvcMetricsFilter
+webMvcTagsProvider
+webServerFactoryCustomizerBeanPostProcessor
+websocketServletWebServerCustomizer
+welcomePageHandlerMapping
+2021-09-23 19:00:47.984  INFO 7040 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring TestDispatcherServlet ''
+2021-09-23 19:00:47.984  INFO 7040 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-09-23 19:00:47.985  INFO 7040 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.283 s - in me.samarthya.GreetingControllerTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ release-demo ---
+[INFO] Building jar: /Users/samarthya/sourcebox/github.com/release-demo/target/release-demo-1.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] >>> maven-source-plugin:3.2.1:jar (attach-sources) > generate-sources @ release-demo >>>
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0:enforce (enforce-build-tools-versions) @ release-demo ---
+[INFO] 
+[INFO] <<< maven-source-plugin:3.2.1:jar (attach-sources) < generate-sources @ release-demo <<<
+[INFO] 
+[INFO] 
+[INFO] --- maven-source-plugin:3.2.1:jar (attach-sources) @ release-demo ---
+[INFO] Building jar: /Users/samarthya/sourcebox/github.com/release-demo/target/release-demo-1.0.1-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-javadoc-plugin:3.3.0:jar (attach-javadocs) @ release-demo ---
+[INFO] No previous run data found, generating javadoc.
+[WARNING] Javadoc Warnings
+[WARNING] warning: The -footer option is no longer supported and will be ignored.
+[WARNING] It may be removed in a future release.
+[WARNING] Loading source files for package me.samarthya...
+[WARNING] Constructing Javadoc information...
+[WARNING] Building index for all the packages and classes...
+[WARNING] Standard Doclet version 17+0
+[WARNING] Building tree for all the packages and classes...
+[WARNING] Generating /Users/samarthya/sourcebox/github.com/release-demo/target/apidocs/me/samarthya/GreetingController.html...
+[WARNING] Generating /Users/samarthya/sourcebox/github.com/release-demo/target/apidocs/me/samarthya/StartPoint.html...
+[WARNING] Generating /Users/samarthya/sourcebox/github.com/release-demo/target/apidocs/me/samarthya/package-summary.html...
+[WARNING] Generating /Users/samarthya/sourcebox/github.com/release-demo/target/apidocs/me/samarthya/package-tree.html...
+[WARNING] Generating /Users/samarthya/sourcebox/github.com/release-demo/target/apidocs/me/samarthya/class-use/StartPoint.html...
+[WARNING] Generating /Users/samarthya/sourcebox/github.com/release-demo/target/apidocs/me/samarthya/class-use/GreetingController.html...
+[WARNING] Generating /Users/samarthya/sourcebox/github.com/release-demo/target/apidocs/me/samarthya/package-use.html...
+[WARNING] Generating /Users/samarthya/sourcebox/github.com/release-demo/target/apidocs/overview-tree.html...
+[WARNING] Building index for all classes...
+[WARNING] Generating /Users/samarthya/sourcebox/github.com/release-demo/target/apidocs/allclasses-index.html...
+[WARNING] Generating /Users/samarthya/sourcebox/github.com/release-demo/target/apidocs/allpackages-index.html...
+[WARNING] Generating /Users/samarthya/sourcebox/github.com/release-demo/target/apidocs/index-all.html...
+[WARNING] Generating /Users/samarthya/sourcebox/github.com/release-demo/target/apidocs/index.html...
+[WARNING] Generating /Users/samarthya/sourcebox/github.com/release-demo/target/apidocs/help-doc.html...
+[WARNING] 1 warning
+[INFO] Building jar: /Users/samarthya/sourcebox/github.com/release-demo/target/release-demo-1.0.1-SNAPSHOT-javadoc.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.5.4:repackage (default) @ release-demo ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0:enforce (enforce-build-tools-versions) @ release-demo ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ release-demo ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ release-demo ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /Users/samarthya/sourcebox/github.com/release-demo/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ release-demo ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /Users/samarthya/sourcebox/github.com/release-demo/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ release-demo ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /Users/samarthya/sourcebox/github.com/release-demo/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ release-demo ---
+[INFO] Skipping execution of surefire because it has already been run for this configuration
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ release-demo ---
+[INFO] Building jar: /Users/samarthya/sourcebox/github.com/release-demo/target/release-demo-1.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] >>> maven-source-plugin:3.2.1:jar (attach-sources) > generate-sources @ release-demo >>>
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0:enforce (enforce-build-tools-versions) @ release-demo ---
+[INFO] 
+[INFO] <<< maven-source-plugin:3.2.1:jar (attach-sources) < generate-sources @ release-demo <<<
+[INFO] 
+[INFO] 
+[INFO] --- maven-source-plugin:3.2.1:jar (attach-sources) @ release-demo ---
+[WARNING] artifact me.samarthya:release-demo:java-source:sources:1.0.1-SNAPSHOT already attached, replace previous instance
+[INFO] 
+[INFO] --- maven-javadoc-plugin:3.3.0:jar (attach-javadocs) @ release-demo ---
+[INFO] Skipping javadoc generation, everything is up to date.
+[INFO] Building jar: /Users/samarthya/sourcebox/github.com/release-demo/target/release-demo-1.0.1-SNAPSHOT-javadoc.jar
+[WARNING] artifact me.samarthya:release-demo:javadoc:javadoc:1.0.1-SNAPSHOT already attached, replace previous instance
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.5.4:repackage (default) @ release-demo ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ release-demo ---
+[INFO] Installing /Users/samarthya/sourcebox/github.com/release-demo/target/release-demo-1.0.1-SNAPSHOT.jar to /Users/samarthya/.m2/repository/me/samarthya/release-demo/1.0.1-SNAPSHOT/release-demo-1.0.1-SNAPSHOT.jar
+[INFO] Installing /Users/samarthya/sourcebox/github.com/release-demo/pom.xml to /Users/samarthya/.m2/repository/me/samarthya/release-demo/1.0.1-SNAPSHOT/release-demo-1.0.1-SNAPSHOT.pom
+[INFO] Installing /Users/samarthya/sourcebox/github.com/release-demo/target/release-demo-1.0.1-SNAPSHOT-sources.jar to /Users/samarthya/.m2/repository/me/samarthya/release-demo/1.0.1-SNAPSHOT/release-demo-1.0.1-SNAPSHOT-sources.jar
+[INFO] Installing /Users/samarthya/sourcebox/github.com/release-demo/target/release-demo-1.0.1-SNAPSHOT-javadoc.jar to /Users/samarthya/.m2/repository/me/samarthya/release-demo/1.0.1-SNAPSHOT/release-demo-1.0.1-SNAPSHOT-javadoc.jar
+[INFO] 
+[INFO] --- maven-deploy-plugin:2.7:deploy (default-deploy) @ release-demo ---
+Downloading from virtual-repo: http://reposerver.samarthya.me:8082/artifactory/virtual-maven-repo/me/samarthya/release-demo/1.0.1-SNAPSHOT/maven-metadata.xml
+Downloaded from virtual-repo: http://reposerver.samarthya.me:8082/artifactory/virtual-maven-repo/me/samarthya/release-demo/1.0.1-SNAPSHOT/maven-metadata.xml (1.2 kB at 1.2 kB/s)
+Uploading to virtual-repo: http://reposerver.samarthya.me:8082/artifactory/virtual-maven-repo/me/samarthya/release-demo/1.0.1-SNAPSHOT/release-demo-1.0.1-20210923.133041-5.jar
+Uploaded to virtual-repo: http://reposerver.samarthya.me:8082/artifactory/virtual-maven-repo/me/samarthya/release-demo/1.0.1-SNAPSHOT/release-demo-1.0.1-20210923.133041-5.jar (19 MB at 2.1 MB/s)
+Uploading to virtual-repo: http://reposerver.samarthya.me:8082/artifactory/virtual-maven-repo/me/samarthya/release-demo/1.0.1-SNAPSHOT/release-demo-1.0.1-20210923.133041-5.pom
+Uploaded to virtual-repo: http://reposerver.samarthya.me:8082/artifactory/virtual-maven-repo/me/samarthya/release-demo/1.0.1-SNAPSHOT/release-demo-1.0.1-20210923.133041-5.pom (8.5 kB at 6.9 kB/s)
+Downloading from virtual-repo: http://reposerver.samarthya.me:8082/artifactory/virtual-maven-repo/me/samarthya/release-demo/maven-metadata.xml
+Downloaded from virtual-repo: http://reposerver.samarthya.me:8082/artifactory/virtual-maven-repo/me/samarthya/release-demo/maven-metadata.xml (415 B at 918 B/s)
+Uploading to virtual-repo: http://reposerver.samarthya.me:8082/artifactory/virtual-maven-repo/me/samarthya/release-demo/1.0.1-SNAPSHOT/maven-metadata.xml
+Uploaded to virtual-repo: http://reposerver.samarthya.me:8082/artifactory/virtual-maven-repo/me/samarthya/release-demo/1.0.1-SNAPSHOT/maven-metadata.xml (1.2 kB at 1.1 kB/s)
+Uploading to virtual-repo: http://reposerver.samarthya.me:8082/artifactory/virtual-maven-repo/me/samarthya/release-demo/maven-metadata.xml
+Uploaded to virtual-repo: http://reposerver.samarthya.me:8082/artifactory/virtual-maven-repo/me/samarthya/release-demo/maven-metadata.xml (358 B at 347 B/s)
+Uploading to virtual-repo: http://reposerver.samarthya.me:8082/artifactory/virtual-maven-repo/me/samarthya/release-demo/1.0.1-SNAPSHOT/release-demo-1.0.1-20210923.133041-5-sources.jar
+Uploaded to virtual-repo: http://reposerver.samarthya.me:8082/artifactory/virtual-maven-repo/me/samarthya/release-demo/1.0.1-SNAPSHOT/release-demo-1.0.1-20210923.133041-5-sources.jar (4.2 kB at 3.4 kB/s)
+Uploading to virtual-repo: http://reposerver.samarthya.me:8082/artifactory/virtual-maven-repo/me/samarthya/release-demo/1.0.1-SNAPSHOT/maven-metadata.xml
+Uploaded to virtual-repo: http://reposerver.samarthya.me:8082/artifactory/virtual-maven-repo/me/samarthya/release-demo/1.0.1-SNAPSHOT/maven-metadata.xml (1.2 kB at 1.2 kB/s)
+Uploading to virtual-repo: http://reposerver.samarthya.me:8082/artifactory/virtual-maven-repo/me/samarthya/release-demo/1.0.1-SNAPSHOT/release-demo-1.0.1-20210923.133041-5-javadoc.jar
+Uploaded to virtual-repo: http://reposerver.samarthya.me:8082/artifactory/virtual-maven-repo/me/samarthya/release-demo/1.0.1-SNAPSHOT/release-demo-1.0.1-20210923.133041-5-javadoc.jar (125 kB at 80 kB/s)
+Uploading to virtual-repo: http://reposerver.samarthya.me:8082/artifactory/virtual-maven-repo/me/samarthya/release-demo/1.0.1-SNAPSHOT/maven-metadata.xml
+Uploaded to virtual-repo: http://reposerver.samarthya.me:8082/artifactory/virtual-maven-repo/me/samarthya/release-demo/1.0.1-SNAPSHOT/maven-metadata.xml (1.2 kB at 1.2 kB/s)
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  30.192 s
+[INFO] Finished at: 2021-09-23T19:01:11+05:30
+[INFO] ------------------------------------------------------------------------
+```
 ### Step 1:
 Configure the `spring-boot` application to run.
 
@@ -47,7 +478,7 @@ Assuming you code is available in your repository
 
 The snapshot build the original dev version can simply be deployed using maven clean deploy
 
-<img src="images/maven-snapshot-deploy.png"/>
+<img src="images/snapshot-versions-published.png"/>
 
 ```bash
 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.332 s - in me.samarthya.GreetingControllerTest
