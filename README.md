@@ -1,4 +1,4 @@
-**# Using the release plugin
+# Using the release plugin
 
 In this demo I will be using a simple demo service exposed as artifact for anyone to use and explain the steps of using the `versions` plugin
 
@@ -89,3 +89,5 @@ Uploaded to virtual-repo: http://reposerver.samarthya.me:8082/artifactory/virtua
 ## The release plugin
 
 `mvn release:prepare`
+`mvn release:perform`
+`mvn release:rollback`
